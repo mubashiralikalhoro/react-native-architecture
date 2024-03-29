@@ -65,4 +65,20 @@ yarn-error.log
 # testing
 /coverage
 
-
+# arc only
+.bundle
+.eslintrc.js
+.prettierrc.js
+.watchmanconfig
+__tests__
+android
+app.json
+babel.config.js
+Gemfile
+index.js
+ios
+metro.config.js
+yarn.lock
+tsconfig.json
+jest.config.js
+package.json
