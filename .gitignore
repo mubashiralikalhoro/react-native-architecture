@@ -66,6 +66,3 @@ yarn-error.log
 /coverage
 
 
-# for arc only
-android/
-ios/

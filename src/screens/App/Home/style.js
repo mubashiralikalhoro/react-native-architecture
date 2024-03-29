@@ -1,10 +1,12 @@
 import {StyleSheet} from 'react-native';
 import {useColors} from '../../../constants/color';
 import {useSizes} from '../../../constants/size';
+import {getGlobalStyles} from '../../../constants/globalStyles';
 
 const useStyles = () => {
   const colors = useColors();
   const sizes = useSizes();
+  const globalStyles = getGlobalStyles(colors, sizes);
 
   const styles = StyleSheet.create({
     container: {
@@ -18,6 +20,7 @@ const useStyles = () => {
     txt1: {
       fontSize: sizes.WIDTH * 0.033,
       color: 'black',
+      ...globalStyles.TEXT_STYLE,
     },
   });
 
