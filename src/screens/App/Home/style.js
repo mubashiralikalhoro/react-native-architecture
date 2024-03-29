@@ -1,10 +1,10 @@
-import { StyleSheet, Dimensions, I18nManager } from "react-native";
+import {StyleSheet, Dimensions, I18nManager} from 'react-native';
 
 //Color
-import color from "../../../constants/color";
+import color from '../../../constants/color';
 
 // dimenstion
-const { width, height } = Dimensions.get("window");
+const {width, height} = Dimensions.get('window');
 
 export default StyleSheet.create({
   container: {
@@ -18,6 +18,6 @@ export default StyleSheet.create({
   },
   txt1: {
     fontSize: width * 0.033,
-    color: "black",
+    color: 'black',
   },
 });

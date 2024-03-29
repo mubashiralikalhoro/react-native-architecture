@@ -1,11 +1,5 @@
 import React, {Component} from 'react';
-import {
-  View,
-  Modal,
-  Text,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
+import {View, Modal, Text, TouchableOpacity, Image} from 'react-native';
 import styles from './style';
 import {Images} from '../../assets/images';
 
