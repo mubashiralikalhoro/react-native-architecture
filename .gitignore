@@ -64,3 +64,8 @@ yarn-error.log
 
 # testing
 /coverage
+
+
+# for arc only
+android
+ios
