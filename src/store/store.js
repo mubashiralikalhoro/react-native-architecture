@@ -16,11 +16,13 @@ const rootReducer = combineReducers({
   settings: settings,
 });
 
-const persistReducer = persistReducer(persistConfig, rootReducer);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 //  root reducer
 export const store = configureStore({
-  reducer: persistReducer,
+  reducer: persistedReducer,
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({serializableCheck: false}),
 });
 
 export const persistor = persistStore(store);

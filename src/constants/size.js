@@ -1,7 +1,8 @@
-import {Dimensions} from 'react-native';
+import {Dimensions, useWindowDimensions} from 'react-native';
+
 const {width, height} = Dimensions.get('window');
 
-export default {
+const getSizes = (width, height) => ({
   WIDTH: width,
   HEIGHT: height,
   PADDING: width * 0.03,
@@ -13,4 +14,9 @@ export default {
   HEADER_FOOTER_SIZE: height * 0.1,
   BORDER_RADIUS: 5,
   BORDER_RADIUS_HIGH: 15,
+});
+
+export const useSizes = () => {
+  const {width, height} = useWindowDimensions();
+  return getSizes(width, height);
 };

@@ -8,8 +8,6 @@ import {PersistGate} from 'redux-persist/integration/react';
 import {store, persistor} from './src/store/store';
 
 export default App = () => {
-  console.disableYellowBox = true;
-  console.log('hello');
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>

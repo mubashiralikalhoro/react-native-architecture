@@ -1,3 +1,5 @@
+import {useColorScheme} from 'react-native';
+
 const defaultColors = {
   PRIMARY: '#fd5701',
   PRIMARY_TEXT: 'white',
@@ -30,4 +32,7 @@ const colorsLight = {
   GRAY: 'grey',
 };
 
-export default color = 1 ? colorsLight : colorsDark;
+export const useColors = () => {
+  const color = useColorScheme();
+  return color == 'dark' ? colorsDark : colorsLight;
+};

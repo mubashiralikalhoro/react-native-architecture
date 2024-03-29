@@ -1,23 +1,31 @@
-import {StyleSheet, Dimensions, I18nManager} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {useColors} from '../../../constants/color';
+import {useSizes} from '../../../constants/size';
 
-//Color
-import color from '../../../constants/color';
+const useStyles = () => {
+  const colors = useColors();
+  const sizes = useSizes();
 
-// dimenstion
-const {width, height} = Dimensions.get('window');
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: colors.BACKGROUND,
+    },
+    contStyle: {
+      marginTop: sizes.HEIGHT * 0.04,
+      paddingBottom: sizes.WIDTH * 0.04,
+    },
+    txt1: {
+      fontSize: sizes.WIDTH * 0.033,
+      color: 'black',
+    },
+  });
 
-export default StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: color.PRIMARY,
-  },
+  return {
+    colors,
+    sizes,
+    styles,
+  };
+};
 
-  contStyle: {
-    marginTop: height * 0.04,
-    paddingBottom: height * 0.04,
-  },
-  txt1: {
-    fontSize: width * 0.033,
-    color: 'black',
-  },
-});
+export default useStyles;

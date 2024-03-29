@@ -1,14 +1,8 @@
 import React from 'react';
-import {
-  View,
-  Modal,
-  ActivityIndicator,
-  StyleSheet,
-  Dimensions,
-} from 'react-native';
+import {View, ActivityIndicator, StyleSheet, Dimensions} from 'react-native';
 const {width, height} = Dimensions.get('window');
 
-export default function index(props) {
+const LoaderComponent = props => {
   return (
     <View style={styles.overlay}>
       <View style={styles.lModalView}>
@@ -16,7 +10,9 @@ export default function index(props) {
       </View>
     </View>
   );
-}
+};
+
+export default LoaderComponent;
 
 const styles = StyleSheet.create({
   overlay: {
