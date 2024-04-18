@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 // init states
 const initState = {
@@ -6,6 +6,8 @@ const initState = {
     langID: 'en',
   },
 };
+
+export type Settings = typeof initState.settings;
 
 // reducer
 const settings = createSlice({
@@ -18,6 +20,8 @@ const settings = createSlice({
   },
 });
 
-export const {setLangID} = settings.actions;
+export const { setLangID } = settings.actions;
 export default settings.reducer;
-export const selectSettings = state => state.settings.settings;
+
+export const selectSettings = (state: any) =>
+  state.settings.settings as Settings;

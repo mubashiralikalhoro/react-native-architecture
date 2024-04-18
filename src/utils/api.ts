@@ -5,7 +5,7 @@ import endPoints from '../constants/apiEndPoints';
 const api = axios.create({
   baseURL: endPoints.BASE_URL,
   responseType: 'json',
-  headers: {'Content-Type': 'application/json'},
+  headers: { 'Content-Type': 'application/json' },
 });
 
 export default api;

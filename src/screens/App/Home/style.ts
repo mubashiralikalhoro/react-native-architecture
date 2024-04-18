@@ -1,7 +1,7 @@
-import {StyleSheet} from 'react-native';
-import {useColors} from '../../../constants/color';
-import {useSizes} from '../../../constants/size';
-import {getGlobalStyles} from '../../../constants/globalStyles';
+import { StyleSheet } from 'react-native';
+import { useColors } from '../../../constants/color';
+import { useSizes } from '../../../constants/size';
+import { getGlobalStyles } from '../../../constants/globalStyles';
 
 const useStyles = () => {
   const colors = useColors();
@@ -18,9 +18,9 @@ const useStyles = () => {
       paddingBottom: sizes.WIDTH * 0.04,
     },
     txt1: {
+      ...globalStyles.TEXT_STYLE,
       fontSize: sizes.WIDTH * 0.033,
       color: 'black',
-      ...globalStyles.TEXT_STYLE,
     },
   });
 
