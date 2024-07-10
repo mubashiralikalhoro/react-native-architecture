@@ -7,7 +7,7 @@ This project follows the architectural principles designed by Mubashir Ali Kalho
 To set up the project, clone the repository and install the necessary dependencies:
 
 1.  download the code in zip
-2.  delete .ignore from downloaded zip
+2.  delete `.gitignore` from downloaded zip
 3.  paste it inside your project and run the command below
 
 Add the following dependencies:
