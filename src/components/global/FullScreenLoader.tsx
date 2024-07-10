@@ -1,18 +1,30 @@
 import React from 'react';
-import {View, ActivityIndicator, StyleSheet, Dimensions} from 'react-native';
-const {width, height} = Dimensions.get('window');
+import {
+  View,
+  ActivityIndicator,
+  StyleSheet,
+  useWindowDimensions,
+} from 'react-native';
 
-const LoaderComponent = props => {
+const FullScreenLoader = () => {
+  const {height, width} = useWindowDimensions();
   return (
     <View style={styles.overlay}>
-      <View style={styles.lModalView}>
+      <View
+        style={[
+          styles.lModalView,
+          {
+            height: height,
+            width: width,
+          },
+        ]}>
         <ActivityIndicator size={'large'} color="#fff" />
       </View>
     </View>
   );
 };
 
-export default LoaderComponent;
+export default FullScreenLoader;
 
 const styles = StyleSheet.create({
   overlay: {
@@ -26,8 +38,6 @@ const styles = StyleSheet.create({
   },
 
   lModalView: {
-    height,
-    width,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'rgba(0,0,0,0.7)',

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text} from 'react-native';
-import StatusBarComponent from '../../../components/StatusBarComponent';
+import StatusBarComponent from '../../../components/global/StatusBarComponent';
 import useStyles from './style';
 
 const Index = ({}) => {
