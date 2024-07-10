@@ -69,7 +69,7 @@ Uses `react-native-safe-area-context` to manage safe area insets, ensuring that 
     /App
     /Auth
   /utils           # Utility functions and helpers
-/App.tsx            # Main entry point
+/App.tsx           # Main entry point
 ```
 
 ## Running the App
