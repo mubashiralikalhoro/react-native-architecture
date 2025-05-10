@@ -1,14 +1,14 @@
-import {View, Modal, StyleSheet} from 'react-native';
-import {useSizes} from '../../styles/sizes';
-import {useMemo} from 'react';
+import { View, Modal, StyleSheet } from 'react-native';
+import { useSizes } from '../../styles/sizes';
+import { useMemo } from 'react';
 
 type Props = {
   isVisible: boolean;
   children: React.ReactNode;
 };
 
-const CenterModal = ({isVisible, children}: Props) => {
-  const {styles} = useStyles();
+const CenterModal = ({ isVisible, children }: Props) => {
+  const { styles } = useStyles();
   return (
     <Modal animationType="fade" transparent={true} visible={isVisible}>
       <View style={styles.centeredView}>{children}</View>

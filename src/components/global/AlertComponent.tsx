@@ -1,7 +1,7 @@
-import {View, Modal, Text, TouchableOpacity, StyleSheet} from 'react-native';
-import {useSizes} from '../../styles/sizes';
-import {useColors} from '../../styles/colors';
-import {useMemo} from 'react';
+import { View, Modal, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { useSizes } from '../../styles/sizes';
+import { useColors } from '../../styles/colors';
+import { useMemo } from 'react';
 
 type Props = {
   onOkPress: () => void;
@@ -16,7 +16,7 @@ const AlertComponent = ({
   isVisible,
   okText = 'OK',
 }: Props) => {
-  const {styles} = useStyles();
+  const { styles } = useStyles();
   return (
     <Modal animationType="fade" transparent={true} visible={isVisible}>
       <View style={styles.centeredView}>

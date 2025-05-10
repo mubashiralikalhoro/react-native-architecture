@@ -1,12 +1,12 @@
 import React from 'react';
-import {SafeAreaView, View, StatusBar} from 'react-native';
+import { SafeAreaView, View, StatusBar } from 'react-native';
 
 type Props = {
   backgroundColor: string;
   isDark?: boolean;
 };
 
-const StatusBarComponent = ({backgroundColor, isDark}: Props) => (
+const StatusBarComponent = ({ backgroundColor, isDark }: Props) => (
   <View
     style={{
       height: StatusBar.currentHeight,

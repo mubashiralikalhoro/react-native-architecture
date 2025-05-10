@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 const FullScreenLoader = () => {
-  const {height, width} = useWindowDimensions();
+  const { height, width } = useWindowDimensions();
   return (
     <View style={styles.overlay}>
       <View
