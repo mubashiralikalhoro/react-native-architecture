@@ -1,7 +1,8 @@
 import { Platform, StyleSheet } from 'react-native';
-import { Colors } from './color';
-import { Sizes } from './size';
+import { Colors } from './colors';
+import { Sizes } from './sizes';
 import { useMemo } from 'react';
+import fonts from '../assets/fonts';
 
 export const getGlobalStyles = (colors: Colors, sizes: Sizes) => {
   return useMemo(
@@ -10,12 +11,12 @@ export const getGlobalStyles = (colors: Colors, sizes: Sizes) => {
         TEXT_STYLE: {
           fontSize: sizes.FONTSIZE,
           color: colors.TEXT,
-          fontFamily: 'DMSans-Regular',
+          fontFamily: fonts.DmSans.regular,
         },
         TEXT_STYLE_BOLD: {
           fontSize: sizes.FONTSIZE,
           color: colors.TEXT,
-          fontFamily: 'DMSans-Bold',
+          fontFamily: fonts.DmSans.bold,
         },
         SHADOW_STYLE: {
           shadowColor: colors.TEXT,

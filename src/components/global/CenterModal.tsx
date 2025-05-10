@@ -1,5 +1,5 @@
 import {View, Modal, StyleSheet} from 'react-native';
-import {useSizes} from '../../constants/size';
+import {useSizes} from '../../styles/sizes';
 import {useMemo} from 'react';
 
 type Props = {

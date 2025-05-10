@@ -3,7 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { persistStore, persistReducer } from 'redux-persist';
 
 // reducers
-import settings from './reducer/settings';
+import settings, { Settings } from './reducer/settings';
 
 // config
 const persistConfig = {
@@ -26,3 +26,7 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
+
+export interface RootState {
+  settings: Settings;
+}

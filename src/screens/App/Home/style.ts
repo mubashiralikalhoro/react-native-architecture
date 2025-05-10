@@ -1,32 +1,31 @@
 import { StyleSheet } from 'react-native';
-import { useColors } from '../../../constants/color';
-import { useSizes } from '../../../constants/size';
-import { getGlobalStyles } from '../../../constants/globalStyles';
+import useTheme from '../../../styles/theme';
+import { useMemo } from 'react';
 
 const useStyles = () => {
-  const colors = useColors();
-  const sizes = useSizes();
-  const globalStyles = getGlobalStyles(colors, sizes);
+  const theme = useTheme();
 
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: colors.BACKGROUND,
-    },
-    contStyle: {
-      marginTop: sizes.HEIGHT * 0.04,
-      paddingBottom: sizes.WIDTH * 0.04,
-    },
-    txt1: {
-      ...globalStyles.TEXT_STYLE,
-      fontSize: sizes.WIDTH * 0.033,
-      color: 'black',
-    },
-  });
+  const styles = useMemo(() => {
+    const { colors, globalStyles, sizes } = theme;
+    return StyleSheet.create({
+      container: {
+        flex: 1,
+        backgroundColor: colors.BACKGROUND,
+      },
+      contStyle: {
+        marginTop: sizes.HEIGHT * 0.04,
+        paddingBottom: sizes.WIDTH * 0.04,
+      },
+      txt1: {
+        ...globalStyles.TEXT_STYLE,
+        fontSize: sizes.WIDTH * 0.033,
+        color: 'black',
+      },
+    });
+  }, [theme]);
 
   return {
-    colors,
-    sizes,
+    theme,
     styles,
   };
 };

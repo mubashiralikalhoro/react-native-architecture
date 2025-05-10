@@ -1,8 +1,8 @@
 import {Image, StyleSheet, TextInput, View} from 'react-native';
 import React, {useMemo} from 'react';
-import {useSizes} from '../../constants/size';
-import {getGlobalStyles} from '../../constants/globalStyles';
-import {useColors} from '../../constants/color';
+import {useSizes} from '../../styles/sizes';
+import {getGlobalStyles} from '../../styles/global-styles';
+import {useColors} from '../../styles/colors';
 
 type Props = {
   placeholder: string;

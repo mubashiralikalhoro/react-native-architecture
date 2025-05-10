@@ -1,6 +1,6 @@
 import {View, Modal, Text, TouchableOpacity, StyleSheet} from 'react-native';
-import {useSizes} from '../../constants/size';
-import {useColors} from '../../constants/color';
+import {useSizes} from '../../styles/sizes';
+import {useColors} from '../../styles/colors';
 import {useMemo} from 'react';
 
 type Props = {
