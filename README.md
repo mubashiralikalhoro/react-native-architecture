@@ -6,14 +6,14 @@ This project follows the architectural principles designed by Mubashir Ali Kalho
 
 To set up the project, clone the repository and install the necessary dependencies:
 
-1.  download the code in zip
-2.  delete `.gitignore` from downloaded zip
-3.  paste it inside your project and run the command below
+1.  Download the code in zip
+2.  Delete `.gitignore` from downloaded zip (if you want to use your own)
+3.  Paste it inside your project and run the command below
 
 Add the following dependencies:
 
 ```bash
-yarn add @react-native-async-storage/async-storage @react-navigation/native @react-navigation/native-stack @reduxjs/toolkit react-redux redux-persist axios react-native-screens react-native-safe-area-context
+yarn add @react-native-async-storage/async-storage @react-navigation/native @react-navigation/native-stack @reduxjs/toolkit react-redux redux-persist axios react-native-screens react-native-safe-area-context react-native-size-matters
 ```
 
 ## Key Features of the Architecture
@@ -23,6 +23,7 @@ yarn add @react-native-async-storage/async-storage @react-navigation/native @rea
 The architecture is designed to handle dynamic styling efficiently:
 
 - **Responsive Dimensions**: The application listens for changes in window size and updates the dimensions accordingly. This ensures a seamless experience across different devices and orientations.
+- **Size Matters Integration**: Uses `react-native-size-matters` for scaling UI elements proportionally across different device sizes, ensuring consistent UI across a variety of screen dimensions.
 - **Theming via Device Style**: Colors and themes are managed through the current appearance of the device. This ensures that any changes to the theme are instantly reflected throughout the app, providing a consistent user experience.
 - **Global Styles**: Common styles are defined globally to maintain consistency across different components. This approach reduces redundancy and simplifies the maintenance of styles.
 
@@ -57,17 +58,14 @@ Uses `react-native-safe-area-context` to manage safe area insets, ensuring that 
 ```
 /src
   /assets          # Asset files like images, fonts, etc.
-    / fonts
-    / icons
-    / images
   /components      # Reusable components
-    /global
-  /utils           # constants (api endpoints, app data)
+  /constants       # Application constants including API endpoints, app data
+  /hooks           # Custom React hooks
   /navigators      # Navigation setup
-  /store           # Redux setup (slices, store, etc.)
   /screens         # Screen components
-    /App
-    /Auth
+  /store           # Redux setup (slices, store, etc.)
+  /styles          # Global styles and theming
+  /types           # TypeScript type definitions
   /utils           # Utility functions and helpers
 /App.tsx           # Main entry point
 ```
@@ -82,6 +80,15 @@ yarn android
 # or
 yarn ios
 ```
+
+## Development Tools
+
+This project utilizes the following development tools:
+
+- **TypeScript**: For type-safe JavaScript development
+- **ESLint**: For code linting and enforcing coding standards
+- **Prettier**: For consistent code formatting
+- **Jest**: For unit testing
 
 ## Conclusion
 
