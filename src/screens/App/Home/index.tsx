@@ -1,18 +1,18 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import StatusBarComponent from '../../../components/global/StatusBarComponent';
 import useStyles from './style';
 import { AppStackScreen } from '../../../types/navigation.types';
 
-type HomeScreenProps = AppStackScreen<'Home'>;
-
-const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
+const HomeScreen: React.FC<AppStackScreen<'Home'>> = ({ navigation }) => {
   const { styles, theme } = useStyles();
 
   return (
     <>
       <StatusBarComponent backgroundColor={theme.colors.BACKGROUND} />
-      <Text style={styles.txt1}>Home</Text>
+      <TouchableOpacity style={styles.container}>
+        <Text style={styles.txt1}>Home</Text>
+      </TouchableOpacity>
     </>
   );
 };
