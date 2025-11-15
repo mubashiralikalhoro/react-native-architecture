@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { AppStackParamList } from '../types/navigation.types.ts';
 
 //Screens
-import Home from '../screens/app1/home1/index.tsx';
+import Home from '../screens/app/home/index.tsx';
 
 const Stack = createNativeStackNavigator<AppStackParamList>();
 
