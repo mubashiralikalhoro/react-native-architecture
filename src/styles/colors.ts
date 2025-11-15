@@ -1,6 +1,6 @@
 import { useColorScheme } from 'react-native';
 
-const defaultColors = {
+const colors = {
   PRIMARY: '#fd5701',
   PRIMARY_TEXT: 'white',
   SKY_BLUE: '#3db6fc',
@@ -10,31 +10,26 @@ const defaultColors = {
   LIGHT_GRAY200: '#c1c7c2',
   BLACK: 'black',
   WHITE: 'white',
+  // Themed Colors
+  BACKGROUND: { dark: '#06090E', light: '#F6F9FE' },
+  TEXT: { dark: 'white', light: 'black' },
+  BORDER_COLOR: { dark: '#1E232D', light: '#E0E0E0' },
+  isDark: { dark: true, light: false },
 };
 
-const colorsDark = {
-  ...defaultColors,
-  isDark: true,
-  BACKGROUND: 'black',
-  TEXT: 'white',
-  PRIMARY_BACKGROUND: '#F6F9FE',
-  LIGHT_GRAY: '#5c5e5c',
-  GRAY: 'grey',
+export type Colors = {
+  [key in keyof typeof colors]: string;
 };
-
-const colorsLight = {
-  ...defaultColors,
-  isDark: false,
-  BACKGROUND: 'white',
-  PRIMARY_BACKGROUND: '#F6F9FE',
-  TEXT: 'black',
-  LIGHT_GRAY: '#c1c7c2',
-  GRAY: 'grey',
-};
-
-export type Colors = typeof colorsDark;
 
 export const useColors = () => {
-  const color = useColorScheme();
-  return color == 'dark' ? colorsDark : colorsLight;
+  const colorScheme = useColorScheme() === 'dark' ? 'dark' : 'light';
+  const proxiedColors: any = new Proxy(colors, {
+    get: (target: any, prop) => {
+      if (!(target as any)[prop]) return undefined;
+      const value = (target as any)[prop];
+      return typeof value === 'string' ? value : value[colorScheme];
+    },
+  });
+
+  return proxiedColors as Colors;
 };

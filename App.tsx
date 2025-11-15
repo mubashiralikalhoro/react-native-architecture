@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import RootNavigator from './src/navigators/stack.navigator';
+import RootNavigator from './src/navigators/root';
 
 //store
 import { Provider } from 'react-redux';

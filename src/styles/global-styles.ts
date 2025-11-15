@@ -11,12 +11,12 @@ export const getGlobalStyles = (colors: Colors, sizes: Sizes) => {
         TEXT_STYLE: {
           fontSize: sizes.FONTSIZE,
           color: colors.TEXT,
-          fontFamily: fonts.DmSans.regular,
+          fontFamily: fonts.Raleway.REGULAR,
         },
         TEXT_STYLE_BOLD: {
           fontSize: sizes.FONTSIZE,
           color: colors.TEXT,
-          fontFamily: fonts.DmSans.bold,
+          fontFamily: fonts.Raleway.BOLD,
         },
         SHADOW_STYLE: {
           shadowColor: colors.TEXT,
@@ -27,7 +27,7 @@ export const getGlobalStyles = (colors: Colors, sizes: Sizes) => {
           shadowOpacity: 0.22,
           shadowRadius: 2.22,
           elevation: 3,
-          borderColor: colors.GRAY,
+          borderColor: colors.BORDER_COLOR,
           borderWidth: Platform.OS == 'android' && colors.isDark ? 0.5 : 0,
         },
       }),

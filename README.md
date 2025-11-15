@@ -4,7 +4,21 @@ This project follows the architectural principles designed by Mubashir Ali Kalho
 
 ## Installation
 
-To set up the project, clone the repository and install the necessary dependencies:
+Choose one of the following installation methods:
+
+### Option 1: Quick Setup (Mac/Linux Only)
+
+Run this single command to automatically set up the architecture in your project:
+
+```bash
+curl -sSL https://mubashirali-me.vercel.app/scripts/rn-arc.sh | bash
+```
+
+**⚠️ Note:** Only run this command on a new project or if you don't care about your existing `src` directory, as it will overwrite the contents.
+
+### Option 2: Manual Setup
+
+To set up the project manually, follow these steps:
 
 1.  Download the code in zip
 2.  Delete `.gitignore` from downloaded zip (if you want to use your own)

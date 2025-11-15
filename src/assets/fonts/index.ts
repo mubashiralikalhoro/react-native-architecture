@@ -1,15 +1,12 @@
 const fonts = {
-  DmSans: {
-    regular: 'DMSans-Regular',
-    medium: 'DMSans-Medium',
-    bold: 'DMSans-Bold',
-    italic: 'DMSans-Italic',
-    mediumItalic: 'DMSans-MediumItalic',
-    boldItalic: 'DMSans-BoldItalic',
-  },
-  Poppins: {
-    black: 'Poppins-Black',
-    italic: 'Poppins-Italic',
+  Raleway: {
+    REGULAR: 'Raleway-Regular',
+    THIN: 'Raleway-Thin',
+    MEDIUM: 'Raleway-Medium',
+    SEMI_BOLD: 'Raleway-SemiBold',
+    BOLD: 'Raleway-Bold',
+    EXTRA_BOLD: 'Raleway-ExtraBold',
+    ITALIC: 'Raleway-Italic',
   },
 };
 

@@ -1,11 +1,12 @@
 import {
   Image,
+  Pressable,
   StyleSheet,
   TextInput,
   TextInputProps,
   View,
 } from 'react-native';
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 import useTheme from '../../styles/theme';
 
 type Props = {
@@ -18,21 +19,25 @@ type Props = {
 
 const InputField = ({ icon, error, iconColor, style, fieldProps }: Props) => {
   const { theme, styles } = useStyles();
+  const ref = useRef<TextInput>(null);
+
   return (
-    <View
+    <Pressable
+      onPress={() => ref?.current?.focus()}
       style={[
         styles.container,
         {
           borderWidth: error ? 1 : 0.5,
-          borderColor: error ? theme.colors.RED : theme.colors.GRAY,
+          borderColor: error ? theme.colors.RED : theme.colors.BORDER_COLOR,
         },
         style,
-      ]}>
+      ]}
+    >
       {icon && (
         <Image source={icon} style={[styles.image, { tintColor: iconColor }]} />
       )}
-      <TextInput {...fieldProps} />
-    </View>
+      <TextInput ref={ref} {...fieldProps} />
+    </Pressable>
   );
 };
 

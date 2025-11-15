@@ -3,7 +3,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { persistStore, persistReducer } from 'redux-persist';
 
 // reducers
-import settings, { Settings } from './reducer/settings';
+import settings, { SettingsState } from './reducer/settings';
+import { TypedUseSelectorHook, useSelector } from 'react-redux';
 
 // config
 const persistConfig = {
@@ -28,5 +29,7 @@ export const store = configureStore({
 export const persistor = persistStore(store);
 
 export interface RootState {
-  settings: Settings;
+  settings: SettingsState;
 }
+
+export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
